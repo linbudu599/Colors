@@ -27,7 +27,7 @@ export const COLOR_COLLECTION: Array<IColorItem> = [
   },
   {
     color: "#baccd9",
-    title: "云水蓝",
+    title: "夏颜蓝",
     description: "如云",
   },
   {

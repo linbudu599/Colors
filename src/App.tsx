@@ -12,10 +12,18 @@ interface IColorCardProps extends IColorItem {}
 const StyledCard = styled(Card)<{ color?: string }>`
   background-color: ${(props) =>
     props.color ? `${props.color}!important` : "inherit"};
+
+  min-height: 100px;
 `;
 
 const StyledText = styled(Text)`
   color: #fff !important;
+
+  display: none;
+
+  @media (min-width: 750px) {
+    display: inherit;
+  }
 `;
 
 const ColorCard: FC<IColorCardProps> = ({ color, title, description }) => {
@@ -48,7 +56,12 @@ const StyledSteelblue = styled.b`
 const { Content, Footer } = Page;
 
 const StyledPageFooter = styled(Footer)`
-  position: fixed !important;
+  display: none;
+
+  @media (min-width: 750px) {
+    position: fixed !important;
+    display: inherit;
+  }
 `;
 
 function App() {
@@ -69,11 +82,10 @@ function App() {
             }}
             gap={4}
             justify="center"
-            height="200px"
           >
             {COLOR_COLLECTION.map((item) => {
               return (
-                <Grid key={item.color} xs={6} height="200px" width="100px">
+                <Grid key={item.color} xs={6}>
                   <ColorCard
                     color={
                       item.color.startsWith("#")

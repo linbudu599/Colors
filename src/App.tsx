@@ -1,8 +1,16 @@
 import { FC } from "react";
 import { GeistProvider, CssBaseline } from "@geist-ui/react";
-import { Page, Grid, Card, Text, Link, useToasts } from "@geist-ui/react";
+import {
+  Page,
+  Grid,
+  Card,
+  Text,
+  Link,
+  Toggle,
+  useToasts,
+  useClipboard,
+} from "@geist-ui/react";
 import styled from "styled-components";
-import { CopyToClipboard } from "react-copy-to-clipboard";
 import rgb2hex from "rgb2hex";
 
 import { IColorItem, COLOR_COLLECTION } from "./colors";
@@ -28,23 +36,25 @@ const StyledText = styled(Text)`
 
 const ColorCard: FC<IColorCardProps> = ({ color, title, description }) => {
   const [, setToast] = useToasts();
+  const { copy } = useClipboard();
 
   return (
-    <CopyToClipboard
-      text={color}
-      onCopy={() => {
+    <StyledCard
+      color={color}
+      shadow
+      width="100%"
+      onClick={() => {
+        copy(color);
         setToast({
           text: `Color ${color} copied.`,
           delay: 5000,
         });
       }}
     >
-      <StyledCard color={color} shadow width="100%">
-        <StyledText small>{color}</StyledText>
-        <StyledText>{title}</StyledText>
-        <StyledText>{description}</StyledText>
-      </StyledCard>
-    </CopyToClipboard>
+      <StyledText small>{color}</StyledText>
+      <StyledText>{title}</StyledText>
+      <StyledText>{description}</StyledText>
+    </StyledCard>
   );
 };
 

@@ -41,6 +41,11 @@ export const COLOR_COLLECTION: Array<IColorItem> = [
     description: "孔雀",
   },
   {
+    color: "#2ba4b6",
+    title: "天青蓝",
+    description: "烟雨",
+  },
+  {
     color: "rgb(0,149,182)",
     title: "邦迪蓝",
     description: "海滩",
@@ -163,7 +168,12 @@ export const COLOR_COLLECTION: Array<IColorItem> = [
   {
     color: "#ceb64a",
     title: "草黄",
-    description: "TODO",
+    description: "秋思",
+  },
+  {
+    color: "#f1c702",
+    title: "琉璃黄",
+    description: "光明",
   },
   {
     color: "#fed71a",
@@ -174,6 +184,11 @@ export const COLOR_COLLECTION: Array<IColorItem> = [
     color: "#ffd111",
     title: "藤黄",
     description: "闪耀",
+  },
+  {
+    color: "#fdec7c",
+    title: "松花黄",
+    description: "TODO",
   },
   {
     color: "#f9d27d",
